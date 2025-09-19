@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya Tangirala - Instructional Designer & eLearning Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h2, h3, .retro-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 50vh;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 75%, rgba(59, 130, 246, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 75% 25%, rgba(168, 85, 247, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+        }
+
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(168, 85, 247, 0.2));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-orb:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-orb:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-orb:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 30%;
+            left: 60%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+        
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #a855f7, #3b82f6, #10b981);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            width: 100%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 55%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+            margin-right: 0;
+            text-align: left;
+        }
+
+        .timeline-circle {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a855f7, #3b82f6);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #1f2937;
+            box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.3);
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-circle:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 0 0 8px rgba(168, 85, 247, 0.3);
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, #374151, #4b5563);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #6b7280;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 40px;
+            }
+
+            .timeline-circle {
+                left: 40px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 100px;
+                margin-right: 0;
+                text-align: left;
+            }
+        }
+        
+        .work-sample-frame {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .work-sample-frame:hover {
+            border-color: #667eea;
+            background: #f1f5f9;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 2s ease-in-out;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Interactive Skill Cards */
+        .skill-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .skill-card .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            transition: all 0.6s ease;
+        }
+
+        .skill-card .particle:nth-child(1) {
+            top: 20%;
+            left: 20%;
+            animation: float1 3s ease-in-out infinite;
+        }
+
+        .skill-card .particle:nth-child(2) {
+            top: 60%;
+            right: 20%;
+            animation: float2 3s ease-in-out infinite 1s;
+        }
+
+        .skill-card .particle:nth-child(3) {
+            bottom: 20%;
+            left: 60%;
+            animation: float3 3s ease-in-out infinite 2s;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translateX(0px) rotate(0deg); }
+            50% { transform: translateX(10px) rotate(-180deg); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+            50% { transform: translate(-8px, -8px) rotate(360deg); }
+        }
+
+        .skill-progress-fill {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .skill-card:hover .skill-progress-fill::after {
+            left: 100%;
+        }
+
+        /* Animated Stars Background */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        .star:nth-child(odd) {
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(3n) {
+            animation-delay: 2s;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .star.moving {
+            animation: moveAndTwinkle 8s linear infinite;
+        }
+
+        @keyframes moveAndTwinkle {
+            0% { 
+                opacity: 0;
+                transform: translateX(-10px) scale(1);
+            }
+            10% { 
+                opacity: 1;
+            }
+            90% { 
+                opacity: 1;
+            }
+            100% { 
+                opacity: 0;
+                transform: translateX(100vw) scale(1.5);
+            }
+        }
+
+        /* Navigation Styles */
+        .nav-header {
+            backdrop-filter: blur(10px);
+            background: rgba(17, 24, 39, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #a855f7;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #a855f7, #3b82f6);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #a855f7, #3b82f6);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <!-- Animated Stars Background -->
+    <div class="stars-container" id="starsContainer"></div>
+
+    <!-- Navigation Header -->
+    <nav class="nav-header fixed top-0 left-0 right-0 z-50 py-4">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div class="text-white font-bold text-xl">
+                    Shreya Tangirala
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-white hover:text-purple-400">About</a>
+                    <a href="#experience" class="nav-link text-white hover:text-purple-400">Experience</a>
+                    <a href="#projects" class="nav-link text-white hover:text-purple-400">Projects</a>
+                    <a href="#contact" class="nav-link text-white hover:text-purple-400">Contact</a>
+                    <button onclick="downloadResume()" class="download-btn text-white px-6 py-2 rounded-full font-semibold">
+                        <i class="fas fa-download mr-2"></i>Download Resume
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#about" class="nav-link text-white hover:text-purple-400">About</a>
+                    <a href="#experience" class="nav-link text-white hover:text-purple-400">Experience</a>
+                    <a href="#projects" class="nav-link text-white hover:text-purple-400">Projects</a>
+                    <a href="#contact" class="nav-link text-white hover:text-purple-400">Contact</a>
+                    <button onclick="downloadResume()" class="download-btn text-white px-6 py-2 rounded-full font-semibold w-fit">
+                        <i class="fas fa-download mr-2"></i>Download Resume
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-16 relative z-10 pt-24">
+        <div class="floating-orb"></div>
+        <div class="floating-orb"></div>
+        <div class="floating-orb"></div>
+        <div class="container mx-auto px-6 text-center relative z-20">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4">Shreya Tangirala</h1>
+                <h2 class="text-2xl md:text-3xl font-light mb-8 opacity-90">Instructional Designer & eLearning Specialist</h2>
+                
+                <div class="flex flex-wrap justify-center gap-6 mb-12">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        <span>shreyatr147@gmail.com</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-phone"></i>
+                        <span>+1(405)-503-7517</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fab fa-linkedin"></i>
+                        <span>www.linkedin.com/in/shreyatangirala47</span>
+                    </div>
+                </div>
+                
+                <!-- Professional Portrait Placeholder -->
+                <div class="w-48 h-48 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-8">
+                    <i class="fas fa-user text-6xl opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+                
+               <!-- About Me Section -->
+<section id="about" class="py-16 bg-gray-800">
+  <div class="container mx-auto px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-white mb-12 text-center">About Me</h2>
+
+      <!-- About Me Box -->
+      <div class="grid md:grid-cols-2 gap-10 items-center bg-gradient-to-br from-gray-700 to-gray-800 rounded-3xl p-10 border border-gray-600 shadow-2xl">
+        
+        <!-- Profile Image -->
+        <div class="flex justify-center">
+          <div class="w-full h-full max-w-md rounded-3xl overflow-hidden shadow-lg border-4 border-purple-600">
+            <img src="img1.jpg" alt="Shreya Tangirala" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- About Me Text -->
+        <div class="space-y-6 text-center md:text-left">
+          <h3 class="text-3xl font-bold text-white">
+            Hi, I'm 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+              Shreya Tangirala
+            </span> 👋
+          </h3>
+
+          <p class="text-xl leading-relaxed text-gray-200">
+            An <strong class="text-purple-400">Instructional Designer</strong> with 3+ years of experience crafting online, hybrid, and technology-enhanced learning experiences that merge creativity with instructional strategy.
+          </p>
+          
+          <p class="text-lg leading-relaxed text-gray-300">
+            I specialize in course design, content editing, and the creation of engaging learning assets—from posters and awareness videos to interactive media. Alongside digital design, I also bring experience in hosting events that foster learner engagement and meaningful connections.
+          </p>
+          
+          <p class="text-lg leading-relaxed text-gray-300">
+            Proficient in <strong class="text-blue-400">Articulate 360, Camtasia, Vyond</strong>, and eLearning best practices, I collaborate with SMEs to translate complex concepts into clear, impactful learning journeys. My approach blends proven instructional models like <strong class="text-green-400">ADDIE and SAM</strong> with creative design, ensuring that every course is not only effective but also memorable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+                
+                <!-- Quick Skills Icons -->
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <div class="skill-icon bg-gradient-to-br from-purple-900 to-purple-700 border-2 border-purple-500 rounded-xl p-6 text-center shadow-lg">
+                        <i class="fas fa-graduation-cap text-3xl text-purple-300 mb-3"></i>
+                        <h3 class="font-semibold text-white retro-text">LMS</h3>
+                    </div>
+                    <div class="skill-icon bg-gradient-to-br from-blue-900 to-blue-700 border-2 border-blue-500 rounded-xl p-6 text-center shadow-lg">
+                        <i class="fas fa-play-circle text-3xl text-blue-300 mb-3"></i>
+                        <h3 class="font-semibold text-white retro-text">Articulate</h3>
+                    </div>
+                    <div class="skill-icon bg-gradient-to-br from-green-900 to-green-700 border-2 border-green-500 rounded-xl p-6 text-center shadow-lg">
+                        <i class="fas fa-video text-3xl text-green-300 mb-3"></i>
+                        <h3 class="font-semibold text-white retro-text">Camtasia</h3>
+                    </div>
+                    <div class="skill-icon bg-gradient-to-br from-orange-900 to-orange-700 border-2 border-orange-500 rounded-xl p-6 text-center shadow-lg">
+                        <i class="fas fa-universal-access text-3xl text-orange-300 mb-3"></i>
+                        <h3 class="font-semibold text-white retro-text">Accessibility</h3>
+                    </div>
+                    <div class="skill-icon bg-gradient-to-br from-red-900 to-red-700 border-2 border-red-500 rounded-xl p-6 text-center shadow-lg">
+                        <i class="fas fa-cogs text-3xl text-red-300 mb-3"></i>
+                        <h3 class="font-semibold text-white retro-text">ADDIE/SAM</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-white mb-16 text-center">Professional Experience</h2>
+                
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-circle">
+                            <i class="fas fa-laptop-code text-white text-2xl"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="text-2xl font-bold text-white mb-2">Freelance Instructional Designer</h3>
+                            <p class="text-purple-400 font-semibold mb-2">Independent Contractor</p>
+                            <p class="text-gray-300 mb-4">Jan 2025 – Jul 2025</p>
+                            <ul class="space-y-2 text-gray-200">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Designed and developed online and hybrid courses using Articulate 360 (Storyline, Rise), improving learner engagement by 30%</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Produced instructional videos and animations with Camtasia and Vyond for enhanced digital learning experiences</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Collaborated with faculty and SMEs to define learning objectives, create content, and assess outcomes</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Applied ADDIE methodology, UX design principles, and WCAG accessibility standards</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Deployed courses on Brightspace and Moodle, ensuring SCORM/xAPI compliance</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-circle">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="text-2xl font-bold text-white mb-2">Graduate Student Coordinator</h3>
+                            <p class="text-purple-400 font-semibold mb-2">Oklahoma City University - Office of DEI</p>
+                            <p class="text-gray-300 mb-4">Nov 2023 – Jan 2025</p>
+                            <ul class="space-y-2 text-gray-200">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Partnered with faculty and academic units to design online and blended learning pathways</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Conducted needs assessments and curriculum reviews to ensure course relevance</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Developed competency-based modules with SME input, integrating real-world projects</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Facilitated faculty training workshops on LMS tools (Moodle, Canvas) and digital pedagogy</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-circle">
+                            <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="text-2xl font-bold text-white mb-2">Peer Mentor</h3>
+                            <p class="text-purple-400 font-semibold mb-2">Oklahoma City University - Student Affairs</p>
+                            <p class="text-gray-300 mb-4">Aug 2024 – Dec 2024</p>
+                            <ul class="space-y-2 text-gray-200">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Provided one-on-one coaching and mentoring to 50+ adult and nontraditional learners, improving retention by 25%</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Designed job-readiness and professional development modules</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Facilitated goal-setting workshops, developed KPIs, and tracked outcomes</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Implemented interactive elements such as quizzes, branching scenarios, and multimedia assets</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-circle">
+                            <i class="fas fa-cogs text-white text-2xl"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="text-2xl font-bold text-white mb-2">Work Study</h3>
+                            <p class="text-purple-400 font-semibold mb-2">Oklahoma City University - Student Affairs</p>
+                            <p class="text-gray-300 mb-4">Mar 2024 – Aug 2024</p>
+                            <ul class="space-y-2 text-gray-200">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Supported the development, organization, and delivery of instructional materials for academic and disability services</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Assisted in LMS content management and eLearning workflows, enhancing accessibility and user experience</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Streamlined departmental operations and digital workflows, improving efficiency by 15%</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Leveraged tools including Canva, HTML5, Microsoft 365, PowerPoint, Asana, and Trello</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-circle">
+                            <i class="fas fa-bug text-white text-2xl"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="text-2xl font-bold text-white mb-2">Quality Assurance</h3>
+                            <p class="text-purple-400 font-semibold mb-2">OpenText Technologies</p>
+                            <p class="text-gray-300 mb-4">June 2022 – Jun 2023</p>
+                            <ul class="space-y-2 text-gray-200">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Conducted end-to-end usability, accessibility, and functionality testing for enterprise LMS and HR platforms; resolved 40+ WCAG/ADA issues</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Created UAT plans and test cases in Agile workflows; delivered weekly QA reports to guide content and platform enhancements</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Collaborated with instructional designers and developers to iterate learning platforms, reducing reported learner issues by 15%</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Applied ADDIE methodology to build learning paths for technical workflows</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                    <span>Conducted preliminary testing of e-learning modules to ensure functionality, interactivity, and accessibility</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Projects Section -->
+    <section id="projects" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-white mb-16 text-center">Technical Projects</h2>
+                
+                <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
+                    <!-- Project 1 -->
+                    <div class="card-hover bg-gradient-to-br from-purple-900 to-blue-900 rounded-2xl p-8 border border-purple-600">
+                        <div class="flex items-start gap-6">
+                            <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-university text-white text-3xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-2">University Login & Course Management System</h3>
+                                <div class="flex flex-wrap gap-4 mb-4">
+                                    <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">Oklahoma City University</span>
+                                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Jan 2025 – May 2025</span>
+                                </div>
+                                <p class="text-gray-300 mb-4 leading-relaxed">
+                                    Designed and developed a role-based university learning portal that mirrors core functions of an LMS. The system enabled students to register for courses, view schedules, and access personalized content, while providing administrators with tools to manage users, oversee courses, and track learner activity.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <ul class="space-y-2 text-gray-200">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Role-based learning portal with LMS functionality</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Student course registration and schedule management</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Administrator tools for user and course oversight</span>
+                                        </li>
+                                    </ul>
+                                    <ul class="space-y-2 text-gray-200">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Learning accessibility and UX design principles</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Full-stack Firebase architecture with React.js</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Agile project management methodology</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Firebase</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">React.js</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">HTML5</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">CSS</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">UX Design</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Accessibility</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="card-hover bg-gradient-to-br from-blue-900 to-cyan-900 rounded-2xl p-8 border border-blue-600">
+                        <div class="flex items-start gap-6">
+                            <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-cloud text-white text-3xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-2">Secure Cloud File Sharing Platform</h3>
+                                <div class="flex flex-wrap gap-4 mb-4">
+                                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Technical Project</span>
+                                    <span class="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024 – 2025</span>
+                                </div>
+                                <p class="text-gray-300 mb-4 leading-relaxed">
+                                    Designed and implemented a secure, learner-centered cloud file-sharing platform that supports role-based access, multi-factor authentication (MFA), and audit logging to ensure compliance and data security. Developed intuitive workflows for students and administrators to upload, access, and manage files seamlessly.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <ul class="space-y-2 text-gray-200">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Role-based access with multi-factor authentication</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Intuitive file management workflows</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>AWS S3, Cognito, and IAM integration</span>
+                                        </li>
+                                    </ul>
+                                    <ul class="space-y-2 text-gray-200">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Instructional design and UX principles</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Audit logging and compliance features</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Administrator monitoring and reporting tools</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">AWS S3</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">AWS Cognito</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">AWS IAM</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">React</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Security</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Compliance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="card-hover bg-gradient-to-br from-green-900 to-teal-900 rounded-2xl p-8 border border-green-600">
+                        <div class="flex items-start gap-6">
+                            <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-utensils text-white text-3xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-2">Restaurant Order Management System</h3>
+                                <div class="flex flex-wrap gap-4 mb-4">
+                                    <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Database Development Project</span>
+                                    <span class="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">2024</span>
+                                </div>
+                                <p class="text-gray-300 mb-4 leading-relaxed">
+                                    Designed and developed a relational database system that digitized restaurant operations, from menu management to cashier tracking. The system supports both dine-in and takeaway orders, offering a scalable solution for real-time order handling and sales insights.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <ul class="space-y-2 text-gray-200">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>End-to-end restaurant operations digitization</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Comprehensive menu and cashier management</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Dine-in and takeaway order support</span>
+                                        </li>
+                                    </ul>
+                                    <ul class="space-y-2 text-gray-200">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Real-time order processing capabilities</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Comprehensive sales insights and analytics</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                                            <span>Optimized database architecture for performance</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Database Design</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">SQL</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Real-time Processing</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Analytics</span>
+                                    <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Performance Optimization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Education</h2>
+                
+                <div class="space-y-8">
+                    <div class="card-hover bg-gradient-to-r from-purple-900 to-blue-900 rounded-2xl p-8 border border-purple-600">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Master of Science - Computer Science</h3>
+                                <p class="text-purple-400 font-semibold">Oklahoma City University</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">2023 - 2025</span>
+                            <span class="bg-green-600 text-green-100 px-4 py-2 rounded-full font-semibold">GPA: 3.95</span>
+                        </div>
+                    </div>
+
+                    <div class="card-hover bg-gradient-to-r from-blue-900 to-indigo-900 rounded-2xl p-8 border border-blue-600">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Bachelor of Technology - Computer Science</h3>
+                                <p class="text-blue-400 font-semibold">Kalasalingam Academy of Research and Education</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">2019 - 2023</span>
+                            <span class="bg-green-600 text-green-100 px-4 py-2 rounded-full font-semibold">GPA: 8.18/10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Skills & Expertise</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Skill Card 1 -->
+                    <div class="skill-card group bg-gradient-to-br from-purple-900 to-purple-700 rounded-2xl p-6 border border-purple-600 cursor-pointer overflow-hidden relative">
+                        <div class="skill-icon-container mb-4">
+                            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                                <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 text-center">Instructional Design</h3>
+                        <div class="skill-tags flex flex-wrap gap-2 justify-center mb-4">
+                            <span class="bg-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">ADDIE</span>
+                            <span class="bg-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">SAM</span>
+                            <span class="bg-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Bloom's</span>
+                        </div>
+
+                        <div class="floating-particles absolute inset-0 pointer-events-none">
+                            <div class="particle bg-purple-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-pink-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-purple-300 rounded-full opacity-0 group-hover:opacity-100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2 -->
+                    <div class="skill-card group bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl p-6 border border-blue-600 cursor-pointer overflow-hidden relative">
+                        <div class="skill-icon-container mb-4">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                                <i class="fas fa-video text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 text-center">Video Production</h3>
+                        <div class="skill-tags flex flex-wrap gap-2 justify-center mb-4">
+                            <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Camtasia</span>
+                            <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Vyond</span>
+                            <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Screen Recording</span>
+                        </div>
+                        <div class="floating-particles absolute inset-0 pointer-events-none">
+                            <div class="particle bg-blue-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-blue-300 rounded-full opacity-0 group-hover:opacity-100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3 -->
+                    <div class="skill-card group bg-gradient-to-br from-green-900 to-green-700 rounded-2xl p-6 border border-green-600 cursor-pointer overflow-hidden relative">
+                        <div class="skill-icon-container mb-4">
+                            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                                <i class="fas fa-tools text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 text-center">eLearning Tools</h3>
+                        <div class="skill-tags flex flex-wrap gap-2 justify-center mb-4">
+                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Articulate 360</span>
+                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Camtasia</span>
+                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Vyond</span>
+                        </div>
+
+                        <div class="floating-particles absolute inset-0 pointer-events-none">
+                            <div class="particle bg-green-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-green-300 rounded-full opacity-0 group-hover:opacity-100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 4 -->
+                    <div class="skill-card group bg-gradient-to-br from-orange-900 to-orange-700 rounded-2xl p-6 border border-orange-600 cursor-pointer overflow-hidden relative">
+                        <div class="skill-icon-container mb-4">
+                            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                                <i class="fas fa-universal-access text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 text-center">Accessibility & QA</h3>
+                        <div class="skill-tags flex flex-wrap gap-2 justify-center mb-4">
+                            <span class="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">WCAG 2.1</span>
+                            <span class="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Section 508</span>
+                            <span class="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">QA Testing</span>
+                        </div>
+
+                        <div class="floating-particles absolute inset-0 pointer-events-none">
+                            <div class="particle bg-orange-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-red-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-orange-300 rounded-full opacity-0 group-hover:opacity-100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 5 -->
+                    <div class="skill-card group bg-gradient-to-br from-red-900 to-red-700 rounded-2xl p-6 border border-red-600 cursor-pointer overflow-hidden relative">
+                        <div class="skill-icon-container mb-4">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                                <i class="fas fa-chart-bar text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 text-center">Data & Analytics</h3>
+                        <div class="skill-tags flex flex-wrap gap-2 justify-center mb-4">
+                            <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Learning Analytics</span>
+                            <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Metrics</span>
+                            <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Visualization</span>
+                        </div>
+
+                        <div class="floating-particles absolute inset-0 pointer-events-none">
+                            <div class="particle bg-red-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-pink-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-red-300 rounded-full opacity-0 group-hover:opacity-100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 6 -->
+                    <div class="skill-card group bg-gradient-to-br from-indigo-900 to-indigo-700 rounded-2xl p-6 border border-indigo-600 cursor-pointer overflow-hidden relative">
+                        <div class="skill-icon-container mb-4">
+                            <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                                <i class="fas fa-project-diagram text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 text-center">Project Management</h3>
+                        <div class="skill-tags flex flex-wrap gap-2 justify-center mb-4">
+                            <span class="bg-indigo-200 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Agile</span>
+                            <span class="bg-indigo-200 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Scrum</span>
+                            <span class="bg-indigo-200 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium transform transition-all duration-300 group-hover:scale-105">Timeline Mgmt</span>
+                        </div>
+
+                        <div class="floating-particles absolute inset-0 pointer-events-none">
+                            <div class="particle bg-indigo-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-purple-400 rounded-full opacity-0 group-hover:opacity-100"></div>
+                            <div class="particle bg-indigo-300 rounded-full opacity-0 group-hover:opacity-100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Samples Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Work Samples</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <!-- Work Sample 1 -->
+                    <div class="card-hover bg-gradient-to-br from-purple-900 to-pink-900 rounded-xl p-6 border border-purple-600">
+                        <div class="bg-gray-700 border border-gray-500 rounded-lg mb-4 p-4 min-h-[200px] flex flex-col justify-center">
+                            <div class="text-center text-gray-200">
+                                <i class="fas fa-users text-4xl mb-3 text-purple-400"></i>
+                                <h4 class="font-semibold text-lg mb-2">Inclusive Leadership & Professional Skills</h4>
+                                <p class="text-sm leading-relaxed">Microlearning course for students transitioning from university to corporate environments, emphasizing DEI principles and workplace adaptation strategies.</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Inclusive Leadership Course</h3>
+                        <p class="text-gray-300 text-sm mb-3">Articulate Rise - Corporate Transition Training</p>
+                        <a href="https://rise.articulate.com/share/8ceWjSoST3pkeM2VrzDbuJYrByhHoz8g" target="_blank" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Course
+                        </a>
+                    </div>
+
+                    <!-- Work Sample 2 -->
+                    <div class="card-hover bg-gradient-to-br from-blue-900 to-cyan-900 rounded-xl p-6 border border-blue-600">
+                        <div class="bg-gray-700 border border-gray-500 rounded-lg mb-4 p-4 min-h-[200px] flex flex-col justify-center">
+                            <div class="text-center text-gray-200">
+                                <i class="fas fa-building text-4xl mb-3 text-blue-400"></i>
+                                <h4 class="font-semibold text-lg mb-2">Virtual Office 360°</h4>
+                                <p class="text-sm leading-relaxed">Interactive 360-degree virtual tour of a modern office environment with embedded markers for exploratory learning and workplace familiarization.</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Virtual Office 360°: An Immersive Learning Experience</h3>
+                        <p class="text-gray-300 text-sm mb-3">Articulate Storyline - Interactive Virtual Tour</p>
+                        <a href="https://oklahoma-city-university-5056.reach360.com/manage/courses/course/577f346b-0eb8-4c90-9b9d-c080d1702518?login_hint=stangirala%40my.okcu.edu" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Course
+                        </a>
+                    </div>
+
+                    <!-- Work Sample 3 -->
+                    <div class="card-hover bg-gradient-to-br from-green-900 to-teal-900 rounded-xl p-6 border border-green-600">
+                        <div class="bg-gray-700 border border-gray-500 rounded-lg mb-4 p-4 min-h-[200px] flex flex-col justify-center">
+                            <div class="text-center text-gray-200">
+                                <i class="fas fa-graduation-cap text-4xl mb-3 text-green-400"></i>
+                                <h4 class="font-semibold text-lg mb-2">University Life Simulator</h4>
+                                <p class="text-sm leading-relaxed">Interactive simulation with scenario-based choices and branching pathways that immerse learners in university life experiences and decision-making.</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">University Life Simulator</h3>
+                        <p class="text-gray-300 text-sm mb-3">Articulate 360 - Interactive Simulation</p>
+                        <a href="https://360.articulate.com/review/content/2401e9c9-0edb-4e73-8937-1b5a749995de/review" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Course
+                        </a>
+                    </div>
+
+                    <!-- Work Sample 4 -->
+                    <div class="card-hover bg-gradient-to-br from-orange-900 to-red-900 rounded-xl p-6 border border-orange-600">
+                        <div class="bg-gray-700 border border-gray-500 rounded-lg mb-4 p-4 min-h-[200px] flex flex-col justify-center">
+                            <div class="text-center text-gray-200">
+                                <i class="fas fa-cloud text-4xl mb-3 text-orange-400"></i>
+                                <h4 class="font-semibold text-lg mb-2">Cloud Computing Fundamentals</h4>
+                                <p class="text-sm leading-relaxed">Microlearning course introducing cloud computing concepts through a business transition scenario, covering IaaS, PaaS, and SaaS models with interactive activities.</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Cloud Computing Microlearning</h3>
+                        <p class="text-gray-300 text-sm mb-3">360° Learning Experience - Cloud Fundamentals</p>
+                        <a href="https://oklahoma-city-university-5056.reach360.com/share/course/4a0078eb-e1f4-4cd9-87d4-34b42960b6fd" target="_blank" class="inline-block bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Course
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications & Research Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Publications & Research</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card-hover bg-gradient-to-br from-purple-900 to-pink-900 rounded-xl p-6 border border-purple-600">
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-lg mb-4 min-h-[150px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fas fa-robot text-3xl mb-2"></i>
+                                <p class="text-sm">AI & Security Research</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Breaking the Bot Barrier - AI Chatbots and CAPTCHA Evasion</h3>
+                        <p class="text-gray-300 text-sm mb-2">2023</p>
+                        <a href="#" class="text-purple-400 hover:text-purple-300 text-sm font-semibold">View Publication →</a>
+                    </div>
+
+                    <div class="card-hover bg-gradient-to-br from-blue-900 to-cyan-900 rounded-xl p-6 border border-blue-600">
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-lg mb-4 min-h-[150px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fas fa-child text-3xl mb-2"></i>
+                                <p class="text-sm">Healthcare Technology</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Miniature Crane Prototype - A Novel Approach for Recognizing Yoga Postures to Treat Autistic Children</h3>
+                        <p class="text-gray-300 text-sm mb-2">2022</p>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-semibold">View Publication →</a>
+                    </div>
+
+                    <div class="card-hover bg-gradient-to-br from-green-900 to-teal-900 rounded-xl p-6 border border-green-600">
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-lg mb-4 min-h-[150px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fas fa-comments text-3xl mb-2"></i>
+                                <p class="text-sm">Network Security</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Active Chat Monitoring and Detection Over Internet</h3>
+                        <p class="text-gray-300 text-sm mb-2">2022</p>
+                        <a href="https://ieeexplore.ieee.org/document/10142690" target="_blank" class="text-green-400 hover:text-green-300 text-sm font-semibold">View Publication →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Certificates & Credentials</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card-hover bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700">
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-lg mb-4 min-h-[120px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fab fa-google text-4xl text-blue-400 mb-2"></i>
+                                <p class="text-sm font-semibold">Google Certificate</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Introduction to Google Admin Console</h3>
+                        <p class="text-gray-300 text-sm mb-2">Google</p>
+                        <p class="text-blue-400 text-xs">Issued Aug 2025</p>
+                    </div>
+
+                    <div class="card-hover bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700">
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-lg mb-4 min-h-[120px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fas fa-certificate text-4xl text-blue-500 mb-2"></i>
+                                <p class="text-sm font-semibold">Coursera Certificate</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Foundations of Project Management</h3>
+                        <p class="text-gray-300 text-sm mb-2">Coursera</p>
+                        <p class="text-blue-400 text-xs">Issued May 2025</p>
+                    </div>
+
+                    <div class="card-hover bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700">
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-lg mb-4 min-h-[120px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fas fa-palette text-4xl text-purple-400 mb-2"></i>
+                                <p class="text-sm font-semibold">Coursera Certificate</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Create and Design Digital Products using Canva</h3>
+                        <p class="text-gray-300 text-sm mb-2">Coursera</p>
+                        <p class="text-blue-400 text-xs">Issued 2025</p>
+                    </div>
+
+                    <div class="card-hover bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700">
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-lg mb-4 min-h-[120px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fab fa-linkedin text-4xl text-blue-600 mb-2"></i>
+                                <p class="text-sm font-semibold">LinkedIn Learning</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Elearning Essentials: Instructional Design</h3>
+                        <p class="text-gray-300 text-sm mb-2">LinkedIn Learning Community</p>
+                        <p class="text-blue-400 text-xs">Completed</p>
+                    </div>
+
+                    <div class="card-hover bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700">
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-lg mb-4 min-h-[120px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fab fa-ibm text-4xl text-blue-400 mb-2"></i>
+                                <p class="text-sm font-semibold">IBM Certificate</p>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">User Experience Fundamentals</h3>
+                        <p class="text-gray-300 text-sm mb-2">IBM</p>
+                        <p class="text-blue-400 text-xs">Completed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Volunteering Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Leadership & Volunteering</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Leadership Card -->
+                    <div class="card-hover bg-gradient-to-r from-purple-900 to-pink-900 rounded-2xl p-8 border border-purple-600">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-crown text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">President</h3>
+                                <p class="text-purple-400 font-semibold">Indian Student Association</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-gray-200 mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-yellow-400 mt-1"></i>
+                                <span>Led organization of 10+ cultural and educational events</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-yellow-400 mt-1"></i>
+                                <span>Managed team of 15+ student volunteers</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-yellow-400 mt-1"></i>
+                                <span>Increased membership by 40% during tenure</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-yellow-400 mt-1"></i>
+                                <span>Coordinated with university administration and local community</span>
+                            </li>
+                        </ul>
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-xl min-h-[120px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fas fa-images text-3xl mb-2"></i>
+                                <p class="font-semibold text-sm">Event Gallery</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Volunteering Card -->
+                    <div class="card-hover bg-gradient-to-r from-blue-900 to-cyan-900 rounded-2xl p-8 border border-blue-600">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-hands-helping text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Student Volunteer</h3>
+                                <p class="text-blue-400 font-semibold">IUCEE KARE Student Chapter</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">Aug 2021 - Aug 2022 · 1 yr 1 mo</p>
+                        <p class="text-blue-200 mb-6 font-medium">Science and Technology</p>
+                        <ul class="space-y-3 text-gray-200 mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-yellow-400 mt-1"></i>
+                                <span>Organized technical workshops and seminars for engineering students</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-yellow-400 mt-1"></i>
+                                <span>Coordinated science and technology outreach programs</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-yellow-400 mt-1"></i>
+                                <span>Supported educational initiatives and student development activities</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-yellow-400 mt-1"></i>
+                                <span>Collaborated with faculty and industry professionals</span>
+                            </li>
+                        </ul>
+                        <div class="bg-gray-700 border-2 border-dashed border-gray-500 rounded-xl min-h-[120px] flex items-center justify-center">
+                            <div class="text-center text-gray-300">
+                                <i class="fas fa-flask text-3xl mb-2"></i>
+                                <p class="font-semibold text-sm">IUCEE Activities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
+                <div class="flex flex-wrap justify-center gap-8 mb-8">
+                    <a href="mailto:shreyatr147@gmail.com" class="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                        <span>shreyatr147@gmail.com</span>
+                    </a>
+                    <a href="tel:+14055037517" class="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-phone text-xl"></i>
+                        <span>+1(405)-503-7517</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shreyatangirala47" class="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                        <span>www.linkedin.com/in/shreyatangirala47</span>
+                    </a>
+                </div>
+                <div class="border-t border-gray-700 pt-6">
+                    <p class="text-gray-400">&copy; 2024 Shreya Tangirala. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create animated stars background
+        function createStars() {
+            const starsContainer = document.getElementById('starsContainer');
+            const numberOfStars = 100;
+
+            // Create static twinkling stars
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+
+            // Create moving stars
+            setInterval(() => {
+                const movingStar = document.createElement('div');
+                movingStar.className = 'star moving';
+                movingStar.style.top = Math.random() * 100 + '%';
+                movingStar.style.left = '-10px';
+                movingStar.style.width = Math.random() * 2 + 1 + 'px';
+                movingStar.style.height = movingStar.style.width;
+                starsContainer.appendChild(movingStar);
+
+                // Remove the star after animation completes
+                setTimeout(() => {
+                    if (movingStar.parentNode) {
+                        movingStar.parentNode.removeChild(movingStar);
+                    }
+                }, 8000);
+            }, 3000);
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Download resume functionality
+        function downloadResume() {
+            // Create a simple PDF-like content for demo
+            const resumeContent = `
+SHREYA TANGIRALA
+Instructional Designer & eLearning Specialist
+
+CONTACT:
+Email: shreya.tangirala@email.com
+Phone: (555) 123-4567
+LinkedIn: linkedin.com/in/shreya-tangirala
+
+EXPERIENCE:
+• Senior Instructional Designer - University Learning Center (2022-Present)
+• Instructional Designer - Educational Technology Solutions (2021-2022)
+
+EDUCATION:
+• Master of Science - Computer Science, Oklahoma City University (2020-2022)
+• Bachelor of Technology - Computer Science, Kalasalingam Academy (2016-2020)
+
+SKILLS:
+• LMS Administration (Canvas, Moodle, Brightspace)
+• eLearning Tools (Articulate 360, Camtasia, Vyond)
+• Accessibility Compliance (WCAG 2.1)
+• Instructional Design (ADDIE/SAM)
+            `;
+
+            const blob = new Blob([resumeContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Shreya_Tangirala_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Animate progress bars when they come into view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-fill');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe the skills section
+        const skillsSection = document.querySelector('#skills-section') || document.querySelector('.progress-bar').closest('section');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Scroll to target with offset for fixed header
+                    const headerHeight = 80;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add subtle animation to work sample frames
+        document.querySelectorAll('.work-sample-frame').forEach(frame => {
+            frame.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Initialize stars when page loads
+        document.addEventListener('DOMContentLoaded', createStars);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9806874de484e761',t:'MTc1ODA5MDM0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
